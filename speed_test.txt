@@ -15,8 +15,14 @@ SM4_encrypt>>> blocks: 1048576, time: 0.079857 s, speed: 200.359043 MB/s
 SM4_decrypt>>> blocks: 1048576, time: 0.081764 s, speed: 195.685980 MB/s
 
 Speed Test.(SM4_BS.cpp)
+anf boolfunction:
+SM4_encrypt_BS64bit>>> , time: 0.000029 s, speed: 205 Mb/s
+kwan boolfunction
 SM4_encrypt_BS64bit>>> , time: 0.000029 s, speed: 267.148817 Mb/s
 
+anf boolfunction:
+SM4_encrypt_BS256bit>>> , time: 0.000090 s, speed: 232 Mb/s
+kwan boolfunction
 SM4_encrypt_BS256bit>>> , time: 0.000090 s, speed: 347.856093 Mb/s
 
 
