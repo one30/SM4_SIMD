@@ -1,0 +1,444 @@
+date:2020-07-06
+content:test avx2 sm4_sbox_boolfun
+result:bingo(equals to result of selfunction.cpp)
+    sm[0]:2705c129:0cbc594e:eed66973:0a9d1e10:45cf29cb:807df5cb:edd86f84:e2f822ae
+    sm[1]:91d4fdb6:45b54057:ef8a5374:b9513f71:f4f04a61:7e376bf2:790a8210:3706087c
+    sm[2]:9be35656:944ea16f:f22e0427:f0a1bad5:4552758c:d40bbf4c:a7280dc6:2f8f3678
+    sm[3]:3a0eac89:872e3e56:1173c3f2:b4320883:e2186a84:925b4f6e:ef6b9788:d954bef7
+    sm[4]:d3e43421:bbc0617a:1f701a8f:96329d41:536a2f7a:c004ec53:5fef237b:2760ecba
+    sm[5]:374edc90:158bd21b:3d29dcc9:49f60258:c3edd4bb:7571257c:2b002bcf:43e479d2
+    sm[6]:bc145148:755d8a58:9c4acedc:1e22b596:9c7ca109:6787dc7f:05734664:53ae76ed
+    sm[7]:fd542585:9e0edbf5:398d33c2:03018c1f:f5f9d8cf:6a90ce40:be415d2f:a46b544c
+
+date:2020-07-13
+rkey:sm4 SM4_key_schedule
+result:bingo
+rkey[0]=f12186f9
+rkey[1]=8df6bd29
+rkey[2]=c84ffa6f
+rkey[3]=42caf1e5
+rkey[4]=edf7fb30
+rkey[5]=b81fb49c
+rkey[6]=a6c116f2
+rkey[7]=74414605
+rkey[8]=c5d4f7c2
+rkey[9]=13620395
+rkey[10]=b0e272ed
+rkey[11]=f4fbae04
+rkey[12]=678a28a4
+rkey[13]=169ca711
+rkey[14]=78ec6576
+rkey[15]=d9b9a997
+rkey[16]=ced2b23d
+rkey[17]=c72465bf
+rkey[18]=b7b58500
+rkey[19]=b545e529
+rkey[20]=09a77641
+rkey[21]=ba633223
+rkey[22]=ecf254ae
+rkey[23]=046cdb45
+rkey[24]=f84e089f
+rkey[25]=d4bfcda9
+rkey[26]=c3ef5db7
+rkey[27]=b53dc62d
+rkey[28]=1d378c3a
+rkey[29]=a3f40868
+rkey[30]=720005e9
+rkey[31]=3f88b2ec
+
+test BS_N[128]
+sample:76543210(rev)->0x0000100001001100
+BS_N[0]=0000000000000000BS_N[1]=0000000000000000BS_N[2]=0000000000000000BS_N[3]=0000000000000000
+BS_N[4]=ffffffffffffffffBS_N[5]=0000000000000000BS_N[6]=0000000000000000BS_N[7]=0000000000000000
+BS_N[8]=0000000000000000BS_N[9]=ffffffffffffffffBS_N[10]=0000000000000000BS_N[11]=0000000000000000
+BS_N[12]=ffffffffffffffffBS_N[13]=ffffffffffffffffBS_N[14]=0000000000000000BS_N[15]=0000000000000000
+BS_N[16]=0000000000000000BS_N[17]=0000000000000000BS_N[18]=ffffffffffffffffBS_N[19]=0000000000000000
+BS_N[20]=ffffffffffffffffBS_N[21]=0000000000000000BS_N[22]=ffffffffffffffffBS_N[23]=0000000000000000
+BS_N[24]=0000000000000000BS_N[25]=ffffffffffffffffBS_N[26]=ffffffffffffffffBS_N[27]=0000000000000000
+BS_N[28]=ffffffffffffffffBS_N[29]=ffffffffffffffffBS_N[30]=ffffffffffffffffBS_N[31]=0000000000000000
+BS_N[32]=0000000000000000BS_N[33]=0000000000000000BS_N[34]=0000000000000000BS_N[35]=ffffffffffffffff
+BS_N[36]=ffffffffffffffffBS_N[37]=0000000000000000BS_N[38]=0000000000000000BS_N[39]=ffffffffffffffff
+BS_N[40]=0000000000000000BS_N[41]=ffffffffffffffffBS_N[42]=0000000000000000BS_N[43]=ffffffffffffffff
+BS_N[44]=ffffffffffffffffBS_N[45]=ffffffffffffffffBS_N[46]=0000000000000000BS_N[47]=ffffffffffffffff
+BS_N[48]=0000000000000000BS_N[49]=0000000000000000BS_N[50]=ffffffffffffffffBS_N[51]=ffffffffffffffff
+BS_N[52]=ffffffffffffffffBS_N[53]=0000000000000000BS_N[54]=ffffffffffffffffBS_N[55]=ffffffffffffffff
+BS_N[56]=0000000000000000BS_N[57]=ffffffffffffffffBS_N[58]=ffffffffffffffffBS_N[59]=ffffffffffffffff
+BS_N[60]=ffffffffffffffffBS_N[61]=ffffffffffffffffBS_N[62]=ffffffffffffffffBS_N[63]=ffffffffffffffff
+BS_N[64]=ffffffffffffffffBS_N[65]=ffffffffffffffffBS_N[66]=ffffffffffffffffBS_N[67]=ffffffffffffffff
+BS_N[68]=0000000000000000BS_N[69]=ffffffffffffffffBS_N[70]=ffffffffffffffffBS_N[71]=ffffffffffffffff
+BS_N[72]=ffffffffffffffffBS_N[73]=0000000000000000BS_N[74]=ffffffffffffffffBS_N[75]=ffffffffffffffff
+BS_N[76]=0000000000000000BS_N[77]=0000000000000000BS_N[78]=ffffffffffffffffBS_N[79]=ffffffffffffffff
+BS_N[80]=ffffffffffffffffBS_N[81]=ffffffffffffffffBS_N[82]=0000000000000000BS_N[83]=ffffffffffffffff
+BS_N[84]=0000000000000000BS_N[85]=ffffffffffffffffBS_N[86]=0000000000000000BS_N[87]=ffffffffffffffff
+BS_N[88]=ffffffffffffffffBS_N[89]=0000000000000000BS_N[90]=0000000000000000BS_N[91]=ffffffffffffffff
+BS_N[92]=0000000000000000BS_N[93]=0000000000000000BS_N[94]=0000000000000000BS_N[95]=ffffffffffffffff
+BS_N[96]=ffffffffffffffffBS_N[97]=ffffffffffffffffBS_N[98]=ffffffffffffffffBS_N[99]=0000000000000000
+BS_N[100]=0000000000000000BS_N[101]=ffffffffffffffffBS_N[102]=ffffffffffffffffBS_N[103]=0000000000000000
+BS_N[104]=ffffffffffffffffBS_N[105]=0000000000000000BS_N[106]=ffffffffffffffffBS_N[107]=0000000000000000
+BS_N[108]=0000000000000000BS_N[109]=0000000000000000BS_N[110]=ffffffffffffffffBS_N[111]=0000000000000000
+BS_N[112]=ffffffffffffffffBS_N[113]=ffffffffffffffffBS_N[114]=0000000000000000BS_N[115]=0000000000000000
+BS_N[116]=0000000000000000BS_N[117]=ffffffffffffffffBS_N[118]=0000000000000000BS_N[119]=0000000000000000
+BS_N[120]=ffffffffffffffffBS_N[121]=0000000000000000BS_N[122]=0000000000000000BS_N[123]=0000000000000000
+BS_N[124]=0000000000000000BS_N[125]=0000000000000000BS_N[126]=0000000000000000BS_N[127]=0000000000000000
+
+test init_buf[][] 4 round:
+buf[0][0]=0000000000000000buf[0][1]=0000000000000000buf[0][2]=0000000000000000buf[0][3]=0000000000000000
+buf[0][4]=ffffffffffffffffbuf[0][5]=0000000000000000buf[0][6]=0000000000000000buf[0][7]=0000000000000000
+buf[0][8]=0000000000000000buf[0][9]=ffffffffffffffffbuf[0][10]=0000000000000000buf[0][11]=0000000000000000
+buf[0][12]=ffffffffffffffffbuf[0][13]=ffffffffffffffffbuf[0][14]=0000000000000000buf[0][15]=0000000000000000
+buf[0][16]=0000000000000000buf[0][17]=0000000000000000buf[0][18]=ffffffffffffffffbuf[0][19]=0000000000000000
+buf[0][20]=ffffffffffffffffbuf[0][21]=0000000000000000buf[0][22]=ffffffffffffffffbuf[0][23]=0000000000000000
+buf[0][24]=0000000000000000buf[0][25]=ffffffffffffffffbuf[0][26]=ffffffffffffffffbuf[0][27]=0000000000000000
+buf[0][28]=ffffffffffffffffbuf[0][29]=ffffffffffffffffbuf[0][30]=ffffffffffffffffbuf[0][31]=0000000000000000
+buf[1][0]=0000000000000000buf[1][1]=0000000000000000buf[1][2]=0000000000000000buf[1][3]=ffffffffffffffff
+buf[1][4]=ffffffffffffffffbuf[1][5]=0000000000000000buf[1][6]=0000000000000000buf[1][7]=ffffffffffffffff
+buf[1][8]=0000000000000000buf[1][9]=ffffffffffffffffbuf[1][10]=0000000000000000buf[1][11]=ffffffffffffffff
+buf[1][12]=ffffffffffffffffbuf[1][13]=ffffffffffffffffbuf[1][14]=0000000000000000buf[1][15]=ffffffffffffffff
+buf[1][16]=0000000000000000buf[1][17]=0000000000000000buf[1][18]=ffffffffffffffffbuf[1][19]=ffffffffffffffff
+buf[1][20]=ffffffffffffffffbuf[1][21]=0000000000000000buf[1][22]=ffffffffffffffffbuf[1][23]=ffffffffffffffff
+buf[1][24]=0000000000000000buf[1][25]=ffffffffffffffffbuf[1][26]=ffffffffffffffffbuf[1][27]=ffffffffffffffff
+buf[1][28]=ffffffffffffffffbuf[1][29]=ffffffffffffffffbuf[1][30]=ffffffffffffffffbuf[1][31]=ffffffffffffffff
+buf[2][0]=ffffffffffffffffbuf[2][1]=ffffffffffffffffbuf[2][2]=ffffffffffffffffbuf[2][3]=ffffffffffffffff
+buf[2][4]=0000000000000000buf[2][5]=ffffffffffffffffbuf[2][6]=ffffffffffffffffbuf[2][7]=ffffffffffffffff
+buf[2][8]=ffffffffffffffffbuf[2][9]=0000000000000000buf[2][10]=ffffffffffffffffbuf[2][11]=ffffffffffffffff
+buf[2][12]=0000000000000000buf[2][13]=0000000000000000buf[2][14]=ffffffffffffffffbuf[2][15]=ffffffffffffffff
+buf[2][16]=ffffffffffffffffbuf[2][17]=ffffffffffffffffbuf[2][18]=0000000000000000buf[2][19]=ffffffffffffffff
+buf[2][20]=0000000000000000buf[2][21]=ffffffffffffffffbuf[2][22]=0000000000000000buf[2][23]=ffffffffffffffff
+buf[2][24]=ffffffffffffffffbuf[2][25]=0000000000000000buf[2][26]=0000000000000000buf[2][27]=ffffffffffffffff
+buf[2][28]=0000000000000000buf[2][29]=0000000000000000buf[2][30]=0000000000000000buf[2][31]=ffffffffffffffff
+buf[3][0]=ffffffffffffffffbuf[3][1]=ffffffffffffffffbuf[3][2]=ffffffffffffffffbuf[3][3]=0000000000000000
+buf[3][4]=0000000000000000buf[3][5]=ffffffffffffffffbuf[3][6]=ffffffffffffffffbuf[3][7]=0000000000000000
+buf[3][8]=ffffffffffffffffbuf[3][9]=0000000000000000buf[3][10]=ffffffffffffffffbuf[3][11]=0000000000000000
+buf[3][12]=0000000000000000buf[3][13]=0000000000000000buf[3][14]=ffffffffffffffffbuf[3][15]=0000000000000000
+buf[3][16]=ffffffffffffffffbuf[3][17]=ffffffffffffffffbuf[3][18]=0000000000000000buf[3][19]=0000000000000000
+buf[3][20]=0000000000000000buf[3][21]=ffffffffffffffffbuf[3][22]=0000000000000000buf[3][23]=0000000000000000
+buf[3][24]=ffffffffffffffffbuf[3][25]=0000000000000000buf[3][26]=0000000000000000buf[3][27]=0000000000000000
+buf[3][28]=0000000000000000buf[3][29]=0000000000000000buf[3][30]=0000000000000000buf[3][31]=0000000000000000
+test init_buf[][] end:
+
+buf[36][32]*64 bit
+buf[0][0]=0000000000000000buf[0][1]=0000000000000000buf[0][2]=0000000000000000buf[0][3]=0000000000000000
+buf[0][4]=ffffffffffffffffbuf[0][5]=0000000000000000buf[0][6]=0000000000000000buf[0][7]=0000000000000000
+buf[0][8]=0000000000000000buf[0][9]=ffffffffffffffffbuf[0][10]=0000000000000000buf[0][11]=0000000000000000
+buf[0][12]=ffffffffffffffffbuf[0][13]=ffffffffffffffffbuf[0][14]=0000000000000000buf[0][15]=0000000000000000
+buf[0][16]=0000000000000000buf[0][17]=0000000000000000buf[0][18]=ffffffffffffffffbuf[0][19]=0000000000000000
+buf[0][20]=ffffffffffffffffbuf[0][21]=0000000000000000buf[0][22]=ffffffffffffffffbuf[0][23]=0000000000000000
+buf[0][24]=0000000000000000buf[0][25]=ffffffffffffffffbuf[0][26]=ffffffffffffffffbuf[0][27]=0000000000000000
+buf[0][28]=ffffffffffffffffbuf[0][29]=ffffffffffffffffbuf[0][30]=ffffffffffffffffbuf[0][31]=0000000000000000
+buf[1][0]=ffffffffffffffffbuf[1][1]=0000000000000000buf[1][2]=0000000000000000buf[1][3]=0000000000000000
+buf[1][4]=0000000000000000buf[1][5]=ffffffffffffffffbuf[1][6]=0000000000000000buf[1][7]=0000000000000000
+buf[1][8]=ffffffffffffffffbuf[1][9]=ffffffffffffffffbuf[1][10]=0000000000000000buf[1][11]=0000000000000000
+buf[1][12]=0000000000000000buf[1][13]=0000000000000000buf[1][14]=ffffffffffffffffbuf[1][15]=0000000000000000
+buf[1][16]=ffffffffffffffffbuf[1][17]=0000000000000000buf[1][18]=ffffffffffffffffbuf[1][19]=0000000000000000
+buf[1][20]=0000000000000000buf[1][21]=ffffffffffffffffbuf[1][22]=ffffffffffffffffbuf[1][23]=0000000000000000
+buf[1][24]=ffffffffffffffffbuf[1][25]=ffffffffffffffffbuf[1][26]=ffffffffffffffffbuf[1][27]=0000000000000000
+buf[1][28]=0000000000000000buf[1][29]=0000000000000000buf[1][30]=0000000000000000buf[1][31]=ffffffffffffffff
+buf[2][0]=0000000000000000buf[2][1]=ffffffffffffffffbuf[2][2]=0000000000000000buf[2][3]=0000000000000000
+buf[2][4]=ffffffffffffffffbuf[2][5]=ffffffffffffffffbuf[2][6]=0000000000000000buf[2][7]=0000000000000000
+buf[2][8]=0000000000000000buf[2][9]=0000000000000000buf[2][10]=ffffffffffffffffbuf[2][11]=0000000000000000
+buf[2][12]=ffffffffffffffffbuf[2][13]=0000000000000000buf[2][14]=ffffffffffffffffbuf[2][15]=0000000000000000
+buf[2][16]=0000000000000000buf[2][17]=ffffffffffffffffbuf[2][18]=ffffffffffffffffbuf[2][19]=0000000000000000
+buf[2][20]=ffffffffffffffffbuf[2][21]=ffffffffffffffffbuf[2][22]=ffffffffffffffffbuf[2][23]=0000000000000000
+buf[2][24]=0000000000000000buf[2][25]=0000000000000000buf[2][26]=0000000000000000buf[2][27]=ffffffffffffffff
+buf[2][28]=ffffffffffffffffbuf[2][29]=0000000000000000buf[2][30]=0000000000000000buf[2][31]=ffffffffffffffff
+buf[3][0]=ffffffffffffffffbuf[3][1]=ffffffffffffffffbuf[3][2]=0000000000000000buf[3][3]=0000000000000000
+buf[3][4]=0000000000000000buf[3][5]=0000000000000000buf[3][6]=ffffffffffffffffbuf[3][7]=0000000000000000
+buf[3][8]=ffffffffffffffffbuf[3][9]=0000000000000000buf[3][10]=ffffffffffffffffbuf[3][11]=0000000000000000
+buf[3][12]=0000000000000000buf[3][13]=ffffffffffffffffbuf[3][14]=ffffffffffffffffbuf[3][15]=0000000000000000
+buf[3][16]=ffffffffffffffffbuf[3][17]=ffffffffffffffffbuf[3][18]=ffffffffffffffffbuf[3][19]=0000000000000000
+buf[3][20]=0000000000000000buf[3][21]=0000000000000000buf[3][22]=0000000000000000buf[3][23]=ffffffffffffffff
+buf[3][24]=ffffffffffffffffbuf[3][25]=0000000000000000buf[3][26]=0000000000000000buf[3][27]=ffffffffffffffff
+buf[3][28]=0000000000000000buf[3][29]=ffffffffffffffffbuf[3][30]=0000000000000000buf[3][31]=ffffffffffffffff
+
+date:2020-07-14
+rkey:sm4 key_schedule BS_RK[32][32]*64bit
+sample:rkey[0]=f12186f9 排列顺序从低位开始转置
+result:bingo
+         key round0:
+BS_RK[0][0]:ffffffffffffffff BS_RK[0][1]:0000000000000000 BS_RK[0][2]:0000000000000000 BS_RK[0][3]:ffffffffffffffff 
+BS_RK[0][4]:ffffffffffffffff BS_RK[0][5]:ffffffffffffffff BS_RK[0][6]:ffffffffffffffff BS_RK[0][7]:ffffffffffffffff 
+BS_RK[0][8]:0000000000000000 BS_RK[0][9]:ffffffffffffffff BS_RK[0][10]:ffffffffffffffff BS_RK[0][11]:0000000000000000 
+BS_RK[0][12]:0000000000000000 BS_RK[0][13]:0000000000000000 BS_RK[0][14]:0000000000000000 BS_RK[0][15]:ffffffffffffffff 
+BS_RK[0][16]:ffffffffffffffff BS_RK[0][17]:0000000000000000 BS_RK[0][18]:0000000000000000 BS_RK[0][19]:0000000000000000 
+BS_RK[0][20]:0000000000000000 BS_RK[0][21]:ffffffffffffffff BS_RK[0][22]:0000000000000000 BS_RK[0][23]:0000000000000000 
+BS_RK[0][24]:ffffffffffffffff BS_RK[0][25]:0000000000000000 BS_RK[0][26]:0000000000000000 BS_RK[0][27]:0000000000000000 
+BS_RK[0][28]:ffffffffffffffff BS_RK[0][29]:ffffffffffffffff BS_RK[0][30]:ffffffffffffffff BS_RK[0][31]:ffffffffffffffff 
+         key round1:
+BS_RK[1][0]:ffffffffffffffff BS_RK[1][1]:0000000000000000 BS_RK[1][2]:0000000000000000 BS_RK[1][3]:ffffffffffffffff 
+BS_RK[1][4]:0000000000000000 BS_RK[1][5]:ffffffffffffffff BS_RK[1][6]:0000000000000000 BS_RK[1][7]:0000000000000000 
+BS_RK[1][8]:ffffffffffffffff BS_RK[1][9]:0000000000000000 BS_RK[1][10]:ffffffffffffffff BS_RK[1][11]:ffffffffffffffff 
+BS_RK[1][12]:ffffffffffffffff BS_RK[1][13]:ffffffffffffffff BS_RK[1][14]:0000000000000000 BS_RK[1][15]:ffffffffffffffff 
+BS_RK[1][16]:0000000000000000 BS_RK[1][17]:ffffffffffffffff BS_RK[1][18]:ffffffffffffffff BS_RK[1][19]:0000000000000000 
+BS_RK[1][20]:ffffffffffffffff BS_RK[1][21]:ffffffffffffffff BS_RK[1][22]:ffffffffffffffff BS_RK[1][23]:ffffffffffffffff 
+BS_RK[1][24]:ffffffffffffffff BS_RK[1][25]:0000000000000000 BS_RK[1][26]:ffffffffffffffff BS_RK[1][27]:ffffffffffffffff 
+BS_RK[1][28]:0000000000000000 BS_RK[1][29]:0000000000000000 BS_RK[1][30]:0000000000000000 BS_RK[1][31]:ffffffffffffffff 
+         key round2:
+BS_RK[2][0]:ffffffffffffffff BS_RK[2][1]:ffffffffffffffff BS_RK[2][2]:ffffffffffffffff BS_RK[2][3]:ffffffffffffffff 
+BS_RK[2][4]:0000000000000000 BS_RK[2][5]:ffffffffffffffff BS_RK[2][6]:ffffffffffffffff BS_RK[2][7]:0000000000000000 
+BS_RK[2][8]:0000000000000000 BS_RK[2][9]:ffffffffffffffff BS_RK[2][10]:0000000000000000 BS_RK[2][11]:ffffffffffffffff 
+BS_RK[2][12]:ffffffffffffffff BS_RK[2][13]:ffffffffffffffff BS_RK[2][14]:ffffffffffffffff BS_RK[2][15]:ffffffffffffffff 
+BS_RK[2][16]:ffffffffffffffff BS_RK[2][17]:ffffffffffffffff BS_RK[2][18]:ffffffffffffffff BS_RK[2][19]:ffffffffffffffff 
+BS_RK[2][20]:0000000000000000 BS_RK[2][21]:0000000000000000 BS_RK[2][22]:ffffffffffffffff BS_RK[2][23]:0000000000000000 
+BS_RK[2][24]:0000000000000000 BS_RK[2][25]:0000000000000000 BS_RK[2][26]:0000000000000000 BS_RK[2][27]:ffffffffffffffff 
+BS_RK[2][28]:0000000000000000 BS_RK[2][29]:0000000000000000 BS_RK[2][30]:ffffffffffffffff BS_RK[2][31]:ffffffffffffffff 
+         key round3:
+BS_RK[3][0]:ffffffffffffffff BS_RK[3][1]:0000000000000000 BS_RK[3][2]:ffffffffffffffff BS_RK[3][3]:0000000000000000 
+BS_RK[3][4]:0000000000000000 BS_RK[3][5]:ffffffffffffffff BS_RK[3][6]:ffffffffffffffff BS_RK[3][7]:ffffffffffffffff 
+BS_RK[3][8]:ffffffffffffffff BS_RK[3][9]:0000000000000000 BS_RK[3][10]:0000000000000000 BS_RK[3][11]:0000000000000000 
+BS_RK[3][12]:ffffffffffffffff BS_RK[3][13]:ffffffffffffffff BS_RK[3][14]:ffffffffffffffff BS_RK[3][15]:ffffffffffffffff 
+BS_RK[3][16]:0000000000000000 BS_RK[3][17]:ffffffffffffffff BS_RK[3][18]:0000000000000000 BS_RK[3][19]:ffffffffffffffff 
+BS_RK[3][20]:0000000000000000 BS_RK[3][21]:0000000000000000 BS_RK[3][22]:ffffffffffffffff BS_RK[3][23]:ffffffffffffffff 
+BS_RK[3][24]:0000000000000000 BS_RK[3][25]:ffffffffffffffff BS_RK[3][26]:0000000000000000 BS_RK[3][27]:0000000000000000 
+BS_RK[3][28]:0000000000000000 BS_RK[3][29]:0000000000000000 BS_RK[3][30]:ffffffffffffffff BS_RK[3][31]:0000000000000000 
+         key round4:
+BS_RK[4][0]:0000000000000000 BS_RK[4][1]:0000000000000000 BS_RK[4][2]:0000000000000000 BS_RK[4][3]:0000000000000000 
+BS_RK[4][4]:ffffffffffffffff BS_RK[4][5]:ffffffffffffffff BS_RK[4][6]:0000000000000000 BS_RK[4][7]:0000000000000000 
+BS_RK[4][8]:ffffffffffffffff BS_RK[4][9]:ffffffffffffffff BS_RK[4][10]:0000000000000000 BS_RK[4][11]:ffffffffffffffff 
+BS_RK[4][12]:ffffffffffffffff BS_RK[4][13]:ffffffffffffffff BS_RK[4][14]:ffffffffffffffff BS_RK[4][15]:ffffffffffffffff 
+BS_RK[4][16]:ffffffffffffffff BS_RK[4][17]:ffffffffffffffff BS_RK[4][18]:ffffffffffffffff BS_RK[4][19]:0000000000000000 
+BS_RK[4][20]:ffffffffffffffff BS_RK[4][21]:ffffffffffffffff BS_RK[4][22]:ffffffffffffffff BS_RK[4][23]:ffffffffffffffff 
+BS_RK[4][24]:ffffffffffffffff BS_RK[4][25]:0000000000000000 BS_RK[4][26]:ffffffffffffffff BS_RK[4][27]:ffffffffffffffff 
+BS_RK[4][28]:0000000000000000 BS_RK[4][29]:ffffffffffffffff BS_RK[4][30]:ffffffffffffffff BS_RK[4][31]:ffffffffffffffff 
+         key round5:
+BS_RK[5][0]:0000000000000000 BS_RK[5][1]:0000000000000000 BS_RK[5][2]:ffffffffffffffff BS_RK[5][3]:ffffffffffffffff 
+BS_RK[5][4]:ffffffffffffffff BS_RK[5][5]:0000000000000000 BS_RK[5][6]:0000000000000000 BS_RK[5][7]:ffffffffffffffff 
+BS_RK[5][8]:0000000000000000 BS_RK[5][9]:0000000000000000 BS_RK[5][10]:ffffffffffffffff BS_RK[5][11]:0000000000000000 
+BS_RK[5][12]:ffffffffffffffff BS_RK[5][13]:ffffffffffffffff BS_RK[5][14]:0000000000000000 BS_RK[5][15]:ffffffffffffffff 
+BS_RK[5][16]:ffffffffffffffff BS_RK[5][17]:ffffffffffffffff BS_RK[5][18]:ffffffffffffffff BS_RK[5][19]:ffffffffffffffff 
+BS_RK[5][20]:ffffffffffffffff BS_RK[5][21]:0000000000000000 BS_RK[5][22]:0000000000000000 BS_RK[5][23]:0000000000000000 
+BS_RK[5][24]:0000000000000000 BS_RK[5][25]:0000000000000000 BS_RK[5][26]:0000000000000000 BS_RK[5][27]:ffffffffffffffff 
+BS_RK[5][28]:ffffffffffffffff BS_RK[5][29]:ffffffffffffffff BS_RK[5][30]:0000000000000000 BS_RK[5][31]:ffffffffffffffff 
+         key round6:
+BS_RK[6][0]:0000000000000000 BS_RK[6][1]:ffffffffffffffff BS_RK[6][2]:0000000000000000 BS_RK[6][3]:0000000000000000 
+BS_RK[6][4]:ffffffffffffffff BS_RK[6][5]:ffffffffffffffff BS_RK[6][6]:ffffffffffffffff BS_RK[6][7]:ffffffffffffffff 
+BS_RK[6][8]:0000000000000000 BS_RK[6][9]:ffffffffffffffff BS_RK[6][10]:ffffffffffffffff BS_RK[6][11]:0000000000000000 
+BS_RK[6][12]:ffffffffffffffff BS_RK[6][13]:0000000000000000 BS_RK[6][14]:0000000000000000 BS_RK[6][15]:0000000000000000 
+BS_RK[6][16]:ffffffffffffffff BS_RK[6][17]:0000000000000000 BS_RK[6][18]:0000000000000000 BS_RK[6][19]:0000000000000000 
+BS_RK[6][20]:0000000000000000 BS_RK[6][21]:0000000000000000 BS_RK[6][22]:ffffffffffffffff BS_RK[6][23]:ffffffffffffffff 
+BS_RK[6][24]:0000000000000000 BS_RK[6][25]:ffffffffffffffff BS_RK[6][26]:ffffffffffffffff BS_RK[6][27]:0000000000000000 
+BS_RK[6][28]:0000000000000000 BS_RK[6][29]:ffffffffffffffff BS_RK[6][30]:0000000000000000 BS_RK[6][31]:ffffffffffffffff 
+         key round7:
+BS_RK[7][0]:ffffffffffffffff BS_RK[7][1]:0000000000000000 BS_RK[7][2]:ffffffffffffffff BS_RK[7][3]:0000000000000000 
+BS_RK[7][4]:0000000000000000 BS_RK[7][5]:0000000000000000 BS_RK[7][6]:0000000000000000 BS_RK[7][7]:0000000000000000 
+BS_RK[7][8]:0000000000000000 BS_RK[7][9]:ffffffffffffffff BS_RK[7][10]:ffffffffffffffff BS_RK[7][11]:0000000000000000 
+BS_RK[7][12]:0000000000000000 BS_RK[7][13]:0000000000000000 BS_RK[7][14]:ffffffffffffffff BS_RK[7][15]:0000000000000000 
+BS_RK[7][16]:ffffffffffffffff BS_RK[7][17]:0000000000000000 BS_RK[7][18]:0000000000000000 BS_RK[7][19]:0000000000000000 
+BS_RK[7][20]:0000000000000000 BS_RK[7][21]:0000000000000000 BS_RK[7][22]:ffffffffffffffff BS_RK[7][23]:0000000000000000 
+BS_RK[7][24]:0000000000000000 BS_RK[7][25]:0000000000000000 BS_RK[7][26]:ffffffffffffffff BS_RK[7][27]:0000000000000000 
+BS_RK[7][28]:ffffffffffffffff BS_RK[7][29]:ffffffffffffffff BS_RK[7][30]:ffffffffffffffff BS_RK[7][31]:0000000000000000 
+         key round8:
+BS_RK[8][0]:0000000000000000 BS_RK[8][1]:ffffffffffffffff BS_RK[8][2]:0000000000000000 BS_RK[8][3]:0000000000000000 
+BS_RK[8][4]:0000000000000000 BS_RK[8][5]:0000000000000000 BS_RK[8][6]:ffffffffffffffff BS_RK[8][7]:ffffffffffffffff 
+BS_RK[8][8]:ffffffffffffffff BS_RK[8][9]:ffffffffffffffff BS_RK[8][10]:ffffffffffffffff BS_RK[8][11]:0000000000000000 
+BS_RK[8][12]:ffffffffffffffff BS_RK[8][13]:ffffffffffffffff BS_RK[8][14]:ffffffffffffffff BS_RK[8][15]:ffffffffffffffff 
+BS_RK[8][16]:0000000000000000 BS_RK[8][17]:0000000000000000 BS_RK[8][18]:ffffffffffffffff BS_RK[8][19]:0000000000000000 
+BS_RK[8][20]:ffffffffffffffff BS_RK[8][21]:0000000000000000 BS_RK[8][22]:ffffffffffffffff BS_RK[8][23]:ffffffffffffffff 
+BS_RK[8][24]:ffffffffffffffff BS_RK[8][25]:0000000000000000 BS_RK[8][26]:ffffffffffffffff BS_RK[8][27]:0000000000000000 
+BS_RK[8][28]:0000000000000000 BS_RK[8][29]:0000000000000000 BS_RK[8][30]:ffffffffffffffff BS_RK[8][31]:ffffffffffffffff 
+         key round9:
+BS_RK[9][0]:ffffffffffffffff BS_RK[9][1]:0000000000000000 BS_RK[9][2]:ffffffffffffffff BS_RK[9][3]:0000000000000000 
+BS_RK[9][4]:ffffffffffffffff BS_RK[9][5]:0000000000000000 BS_RK[9][6]:0000000000000000 BS_RK[9][7]:ffffffffffffffff 
+BS_RK[9][8]:ffffffffffffffff BS_RK[9][9]:ffffffffffffffff BS_RK[9][10]:0000000000000000 BS_RK[9][11]:0000000000000000 
+BS_RK[9][12]:0000000000000000 BS_RK[9][13]:0000000000000000 BS_RK[9][14]:0000000000000000 BS_RK[9][15]:0000000000000000 
+BS_RK[9][16]:0000000000000000 BS_RK[9][17]:ffffffffffffffff BS_RK[9][18]:0000000000000000 BS_RK[9][19]:0000000000000000 
+BS_RK[9][20]:0000000000000000 BS_RK[9][21]:ffffffffffffffff BS_RK[9][22]:ffffffffffffffff BS_RK[9][23]:0000000000000000 
+BS_RK[9][24]:ffffffffffffffff BS_RK[9][25]:ffffffffffffffff BS_RK[9][26]:0000000000000000 BS_RK[9][27]:0000000000000000 
+BS_RK[9][28]:ffffffffffffffff BS_RK[9][29]:0000000000000000 BS_RK[9][30]:0000000000000000 BS_RK[9][31]:0000000000000000 
+         key round10:
+BS_RK[10][0]:ffffffffffffffff BS_RK[10][1]:0000000000000000 BS_RK[10][2]:ffffffffffffffff BS_RK[10][3]:ffffffffffffffff 
+BS_RK[10][4]:0000000000000000 BS_RK[10][5]:ffffffffffffffff BS_RK[10][6]:ffffffffffffffff BS_RK[10][7]:ffffffffffffffff 
+BS_RK[10][8]:0000000000000000 BS_RK[10][9]:ffffffffffffffff BS_RK[10][10]:0000000000000000 BS_RK[10][11]:0000000000000000 
+BS_RK[10][12]:ffffffffffffffff BS_RK[10][13]:ffffffffffffffff BS_RK[10][14]:ffffffffffffffff BS_RK[10][15]:0000000000000000 
+BS_RK[10][16]:0000000000000000 BS_RK[10][17]:ffffffffffffffff BS_RK[10][18]:0000000000000000 BS_RK[10][19]:0000000000000000 
+BS_RK[10][20]:0000000000000000 BS_RK[10][21]:ffffffffffffffff BS_RK[10][22]:ffffffffffffffff BS_RK[10][23]:ffffffffffffffff 
+BS_RK[10][24]:0000000000000000 BS_RK[10][25]:0000000000000000 BS_RK[10][26]:0000000000000000 BS_RK[10][27]:0000000000000000 
+BS_RK[10][28]:ffffffffffffffff BS_RK[10][29]:ffffffffffffffff BS_RK[10][30]:0000000000000000 BS_RK[10][31]:ffffffffffffffff 
+         key round11:
+BS_RK[11][0]:0000000000000000 BS_RK[11][1]:0000000000000000 BS_RK[11][2]:ffffffffffffffff BS_RK[11][3]:0000000000000000 
+BS_RK[11][4]:0000000000000000 BS_RK[11][5]:0000000000000000 BS_RK[11][6]:0000000000000000 BS_RK[11][7]:0000000000000000 
+BS_RK[11][8]:0000000000000000 BS_RK[11][9]:ffffffffffffffff BS_RK[11][10]:ffffffffffffffff BS_RK[11][11]:ffffffffffffffff 
+BS_RK[11][12]:0000000000000000 BS_RK[11][13]:ffffffffffffffff BS_RK[11][14]:0000000000000000 BS_RK[11][15]:ffffffffffffffff 
+BS_RK[11][16]:ffffffffffffffff BS_RK[11][17]:ffffffffffffffff BS_RK[11][18]:0000000000000000 BS_RK[11][19]:ffffffffffffffff 
+BS_RK[11][20]:ffffffffffffffff BS_RK[11][21]:ffffffffffffffff BS_RK[11][22]:ffffffffffffffff BS_RK[11][23]:ffffffffffffffff 
+BS_RK[11][24]:0000000000000000 BS_RK[11][25]:0000000000000000 BS_RK[11][26]:ffffffffffffffff BS_RK[11][27]:0000000000000000 
+BS_RK[11][28]:ffffffffffffffff BS_RK[11][29]:ffffffffffffffff BS_RK[11][30]:ffffffffffffffff BS_RK[11][31]:ffffffffffffffff 
+         key round12:
+BS_RK[12][0]:0000000000000000 BS_RK[12][1]:0000000000000000 BS_RK[12][2]:ffffffffffffffff BS_RK[12][3]:0000000000000000 
+BS_RK[12][4]:0000000000000000 BS_RK[12][5]:ffffffffffffffff BS_RK[12][6]:0000000000000000 BS_RK[12][7]:ffffffffffffffff 
+BS_RK[12][8]:0000000000000000 BS_RK[12][9]:0000000000000000 BS_RK[12][10]:0000000000000000 BS_RK[12][11]:ffffffffffffffff 
+BS_RK[12][12]:0000000000000000 BS_RK[12][13]:ffffffffffffffff BS_RK[12][14]:0000000000000000 BS_RK[12][15]:0000000000000000 
+BS_RK[12][16]:0000000000000000 BS_RK[12][17]:ffffffffffffffff BS_RK[12][18]:0000000000000000 BS_RK[12][19]:ffffffffffffffff 
+BS_RK[12][20]:0000000000000000 BS_RK[12][21]:0000000000000000 BS_RK[12][22]:0000000000000000 BS_RK[12][23]:ffffffffffffffff 
+BS_RK[12][24]:ffffffffffffffff BS_RK[12][25]:ffffffffffffffff BS_RK[12][26]:ffffffffffffffff BS_RK[12][27]:0000000000000000 
+BS_RK[12][28]:0000000000000000 BS_RK[12][29]:ffffffffffffffff BS_RK[12][30]:ffffffffffffffff BS_RK[12][31]:0000000000000000 
+         key round13:
+BS_RK[13][0]:ffffffffffffffff BS_RK[13][1]:0000000000000000 BS_RK[13][2]:0000000000000000 BS_RK[13][3]:0000000000000000 
+BS_RK[13][4]:ffffffffffffffff BS_RK[13][5]:0000000000000000 BS_RK[13][6]:0000000000000000 BS_RK[13][7]:0000000000000000 
+BS_RK[13][8]:ffffffffffffffff BS_RK[13][9]:ffffffffffffffff BS_RK[13][10]:ffffffffffffffff BS_RK[13][11]:0000000000000000 
+BS_RK[13][12]:0000000000000000 BS_RK[13][13]:ffffffffffffffff BS_RK[13][14]:0000000000000000 BS_RK[13][15]:ffffffffffffffff 
+BS_RK[13][16]:0000000000000000 BS_RK[13][17]:0000000000000000 BS_RK[13][18]:ffffffffffffffff BS_RK[13][19]:ffffffffffffffff 
+BS_RK[13][20]:ffffffffffffffff BS_RK[13][21]:0000000000000000 BS_RK[13][22]:0000000000000000 BS_RK[13][23]:ffffffffffffffff 
+BS_RK[13][24]:0000000000000000 BS_RK[13][25]:ffffffffffffffff BS_RK[13][26]:ffffffffffffffff BS_RK[13][27]:0000000000000000 
+BS_RK[13][28]:ffffffffffffffff BS_RK[13][29]:0000000000000000 BS_RK[13][30]:0000000000000000 BS_RK[13][31]:0000000000000000 
+         key round14:
+BS_RK[14][0]:0000000000000000 BS_RK[14][1]:ffffffffffffffff BS_RK[14][2]:ffffffffffffffff BS_RK[14][3]:0000000000000000 
+BS_RK[14][4]:ffffffffffffffff BS_RK[14][5]:ffffffffffffffff BS_RK[14][6]:ffffffffffffffff BS_RK[14][7]:0000000000000000 
+BS_RK[14][8]:ffffffffffffffff BS_RK[14][9]:0000000000000000 BS_RK[14][10]:ffffffffffffffff BS_RK[14][11]:0000000000000000 
+BS_RK[14][12]:0000000000000000 BS_RK[14][13]:ffffffffffffffff BS_RK[14][14]:ffffffffffffffff BS_RK[14][15]:0000000000000000 
+BS_RK[14][16]:0000000000000000 BS_RK[14][17]:0000000000000000 BS_RK[14][18]:ffffffffffffffff BS_RK[14][19]:ffffffffffffffff 
+BS_RK[14][20]:0000000000000000 BS_RK[14][21]:ffffffffffffffff BS_RK[14][22]:ffffffffffffffff BS_RK[14][23]:ffffffffffffffff 
+BS_RK[14][24]:0000000000000000 BS_RK[14][25]:0000000000000000 BS_RK[14][26]:0000000000000000 BS_RK[14][27]:ffffffffffffffff 
+BS_RK[14][28]:ffffffffffffffff BS_RK[14][29]:ffffffffffffffff BS_RK[14][30]:ffffffffffffffff BS_RK[14][31]:0000000000000000 
+         key round15:
+BS_RK[15][0]:ffffffffffffffff BS_RK[15][1]:ffffffffffffffff BS_RK[15][2]:ffffffffffffffff BS_RK[15][3]:0000000000000000 
+BS_RK[15][4]:ffffffffffffffff BS_RK[15][5]:0000000000000000 BS_RK[15][6]:0000000000000000 BS_RK[15][7]:ffffffffffffffff 
+BS_RK[15][8]:ffffffffffffffff BS_RK[15][9]:0000000000000000 BS_RK[15][10]:0000000000000000 BS_RK[15][11]:ffffffffffffffff 
+BS_RK[15][12]:0000000000000000 BS_RK[15][13]:ffffffffffffffff BS_RK[15][14]:0000000000000000 BS_RK[15][15]:ffffffffffffffff 
+BS_RK[15][16]:ffffffffffffffff BS_RK[15][17]:0000000000000000 BS_RK[15][18]:0000000000000000 BS_RK[15][19]:ffffffffffffffff 
+BS_RK[15][20]:ffffffffffffffff BS_RK[15][21]:ffffffffffffffff BS_RK[15][22]:0000000000000000 BS_RK[15][23]:ffffffffffffffff 
+BS_RK[15][24]:ffffffffffffffff BS_RK[15][25]:0000000000000000 BS_RK[15][26]:0000000000000000 BS_RK[15][27]:ffffffffffffffff 
+BS_RK[15][28]:ffffffffffffffff BS_RK[15][29]:0000000000000000 BS_RK[15][30]:ffffffffffffffff BS_RK[15][31]:ffffffffffffffff 
+         key round16:
+BS_RK[16][0]:ffffffffffffffff BS_RK[16][1]:0000000000000000 BS_RK[16][2]:ffffffffffffffff BS_RK[16][3]:ffffffffffffffff 
+BS_RK[16][4]:ffffffffffffffff BS_RK[16][5]:ffffffffffffffff BS_RK[16][6]:0000000000000000 BS_RK[16][7]:0000000000000000 
+BS_RK[16][8]:0000000000000000 BS_RK[16][9]:ffffffffffffffff BS_RK[16][10]:0000000000000000 BS_RK[16][11]:0000000000000000 
+BS_RK[16][12]:ffffffffffffffff BS_RK[16][13]:ffffffffffffffff BS_RK[16][14]:0000000000000000 BS_RK[16][15]:ffffffffffffffff 
+BS_RK[16][16]:0000000000000000 BS_RK[16][17]:ffffffffffffffff BS_RK[16][18]:0000000000000000 BS_RK[16][19]:0000000000000000 
+BS_RK[16][20]:ffffffffffffffff BS_RK[16][21]:0000000000000000 BS_RK[16][22]:ffffffffffffffff BS_RK[16][23]:ffffffffffffffff 
+BS_RK[16][24]:0000000000000000 BS_RK[16][25]:ffffffffffffffff BS_RK[16][26]:ffffffffffffffff BS_RK[16][27]:ffffffffffffffff 
+BS_RK[16][28]:0000000000000000 BS_RK[16][29]:0000000000000000 BS_RK[16][30]:ffffffffffffffff BS_RK[16][31]:ffffffffffffffff 
+         key round17:
+BS_RK[17][0]:ffffffffffffffff BS_RK[17][1]:ffffffffffffffff BS_RK[17][2]:ffffffffffffffff BS_RK[17][3]:ffffffffffffffff 
+BS_RK[17][4]:ffffffffffffffff BS_RK[17][5]:ffffffffffffffff BS_RK[17][6]:0000000000000000 BS_RK[17][7]:ffffffffffffffff 
+BS_RK[17][8]:ffffffffffffffff BS_RK[17][9]:0000000000000000 BS_RK[17][10]:ffffffffffffffff BS_RK[17][11]:0000000000000000 
+BS_RK[17][12]:0000000000000000 BS_RK[17][13]:ffffffffffffffff BS_RK[17][14]:ffffffffffffffff BS_RK[17][15]:0000000000000000 
+BS_RK[17][16]:0000000000000000 BS_RK[17][17]:0000000000000000 BS_RK[17][18]:ffffffffffffffff BS_RK[17][19]:0000000000000000 
+BS_RK[17][20]:0000000000000000 BS_RK[17][21]:ffffffffffffffff BS_RK[17][22]:0000000000000000 BS_RK[17][23]:0000000000000000 
+BS_RK[17][24]:ffffffffffffffff BS_RK[17][25]:ffffffffffffffff BS_RK[17][26]:ffffffffffffffff BS_RK[17][27]:0000000000000000 
+BS_RK[17][28]:0000000000000000 BS_RK[17][29]:0000000000000000 BS_RK[17][30]:ffffffffffffffff BS_RK[17][31]:ffffffffffffffff 
+         key round18:
+BS_RK[18][0]:0000000000000000 BS_RK[18][1]:0000000000000000 BS_RK[18][2]:0000000000000000 BS_RK[18][3]:0000000000000000 
+BS_RK[18][4]:0000000000000000 BS_RK[18][5]:0000000000000000 BS_RK[18][6]:0000000000000000 BS_RK[18][7]:0000000000000000 
+BS_RK[18][8]:ffffffffffffffff BS_RK[18][9]:0000000000000000 BS_RK[18][10]:ffffffffffffffff BS_RK[18][11]:0000000000000000 
+BS_RK[18][12]:0000000000000000 BS_RK[18][13]:0000000000000000 BS_RK[18][14]:0000000000000000 BS_RK[18][15]:ffffffffffffffff 
+BS_RK[18][16]:ffffffffffffffff BS_RK[18][17]:0000000000000000 BS_RK[18][18]:ffffffffffffffff BS_RK[18][19]:0000000000000000 
+BS_RK[18][20]:ffffffffffffffff BS_RK[18][21]:ffffffffffffffff BS_RK[18][22]:0000000000000000 BS_RK[18][23]:ffffffffffffffff 
+BS_RK[18][24]:ffffffffffffffff BS_RK[18][25]:ffffffffffffffff BS_RK[18][26]:ffffffffffffffff BS_RK[18][27]:0000000000000000 
+BS_RK[18][28]:ffffffffffffffff BS_RK[18][29]:ffffffffffffffff BS_RK[18][30]:0000000000000000 BS_RK[18][31]:ffffffffffffffff 
+         key round19:
+BS_RK[19][0]:ffffffffffffffff BS_RK[19][1]:0000000000000000 BS_RK[19][2]:0000000000000000 BS_RK[19][3]:ffffffffffffffff 
+BS_RK[19][4]:0000000000000000 BS_RK[19][5]:ffffffffffffffff BS_RK[19][6]:0000000000000000 BS_RK[19][7]:0000000000000000 
+BS_RK[19][8]:ffffffffffffffff BS_RK[19][9]:0000000000000000 BS_RK[19][10]:ffffffffffffffff BS_RK[19][11]:0000000000000000 
+BS_RK[19][12]:0000000000000000 BS_RK[19][13]:ffffffffffffffff BS_RK[19][14]:ffffffffffffffff BS_RK[19][15]:ffffffffffffffff 
+BS_RK[19][16]:ffffffffffffffff BS_RK[19][17]:0000000000000000 BS_RK[19][18]:ffffffffffffffff BS_RK[19][19]:0000000000000000 
+BS_RK[19][20]:0000000000000000 BS_RK[19][21]:0000000000000000 BS_RK[19][22]:ffffffffffffffff BS_RK[19][23]:0000000000000000 
+BS_RK[19][24]:ffffffffffffffff BS_RK[19][25]:0000000000000000 BS_RK[19][26]:ffffffffffffffff BS_RK[19][27]:0000000000000000 
+BS_RK[19][28]:ffffffffffffffff BS_RK[19][29]:ffffffffffffffff BS_RK[19][30]:0000000000000000 BS_RK[19][31]:ffffffffffffffff 
+         key round20:
+BS_RK[20][0]:ffffffffffffffff BS_RK[20][1]:0000000000000000 BS_RK[20][2]:0000000000000000 BS_RK[20][3]:0000000000000000 
+BS_RK[20][4]:0000000000000000 BS_RK[20][5]:0000000000000000 BS_RK[20][6]:ffffffffffffffff BS_RK[20][7]:0000000000000000 
+BS_RK[20][8]:0000000000000000 BS_RK[20][9]:ffffffffffffffff BS_RK[20][10]:ffffffffffffffff BS_RK[20][11]:0000000000000000 
+BS_RK[20][12]:ffffffffffffffff BS_RK[20][13]:ffffffffffffffff BS_RK[20][14]:ffffffffffffffff BS_RK[20][15]:0000000000000000 
+BS_RK[20][16]:ffffffffffffffff BS_RK[20][17]:ffffffffffffffff BS_RK[20][18]:ffffffffffffffff BS_RK[20][19]:0000000000000000 
+BS_RK[20][20]:0000000000000000 BS_RK[20][21]:ffffffffffffffff BS_RK[20][22]:0000000000000000 BS_RK[20][23]:ffffffffffffffff 
+BS_RK[20][24]:ffffffffffffffff BS_RK[20][25]:0000000000000000 BS_RK[20][26]:0000000000000000 BS_RK[20][27]:ffffffffffffffff 
+BS_RK[20][28]:0000000000000000 BS_RK[20][29]:0000000000000000 BS_RK[20][30]:0000000000000000 BS_RK[20][31]:0000000000000000 
+         key round21:
+BS_RK[21][0]:ffffffffffffffff BS_RK[21][1]:ffffffffffffffff BS_RK[21][2]:0000000000000000 BS_RK[21][3]:0000000000000000 
+BS_RK[21][4]:0000000000000000 BS_RK[21][5]:ffffffffffffffff BS_RK[21][6]:0000000000000000 BS_RK[21][7]:0000000000000000 
+BS_RK[21][8]:0000000000000000 BS_RK[21][9]:ffffffffffffffff BS_RK[21][10]:0000000000000000 BS_RK[21][11]:0000000000000000 
+BS_RK[21][12]:ffffffffffffffff BS_RK[21][13]:ffffffffffffffff BS_RK[21][14]:0000000000000000 BS_RK[21][15]:0000000000000000 
+BS_RK[21][16]:ffffffffffffffff BS_RK[21][17]:ffffffffffffffff BS_RK[21][18]:0000000000000000 BS_RK[21][19]:0000000000000000 
+BS_RK[21][20]:0000000000000000 BS_RK[21][21]:ffffffffffffffff BS_RK[21][22]:ffffffffffffffff BS_RK[21][23]:0000000000000000 
+BS_RK[21][24]:0000000000000000 BS_RK[21][25]:ffffffffffffffff BS_RK[21][26]:0000000000000000 BS_RK[21][27]:ffffffffffffffff 
+BS_RK[21][28]:ffffffffffffffff BS_RK[21][29]:ffffffffffffffff BS_RK[21][30]:0000000000000000 BS_RK[21][31]:ffffffffffffffff 
+         key round22:
+BS_RK[22][0]:0000000000000000 BS_RK[22][1]:ffffffffffffffff BS_RK[22][2]:ffffffffffffffff BS_RK[22][3]:ffffffffffffffff 
+BS_RK[22][4]:0000000000000000 BS_RK[22][5]:ffffffffffffffff BS_RK[22][6]:0000000000000000 BS_RK[22][7]:ffffffffffffffff 
+BS_RK[22][8]:0000000000000000 BS_RK[22][9]:0000000000000000 BS_RK[22][10]:ffffffffffffffff BS_RK[22][11]:0000000000000000 
+BS_RK[22][12]:ffffffffffffffff BS_RK[22][13]:0000000000000000 BS_RK[22][14]:ffffffffffffffff BS_RK[22][15]:0000000000000000 
+BS_RK[22][16]:0000000000000000 BS_RK[22][17]:ffffffffffffffff BS_RK[22][18]:0000000000000000 BS_RK[22][19]:0000000000000000 
+BS_RK[22][20]:ffffffffffffffff BS_RK[22][21]:ffffffffffffffff BS_RK[22][22]:ffffffffffffffff BS_RK[22][23]:ffffffffffffffff 
+BS_RK[22][24]:0000000000000000 BS_RK[22][25]:0000000000000000 BS_RK[22][26]:ffffffffffffffff BS_RK[22][27]:ffffffffffffffff 
+BS_RK[22][28]:0000000000000000 BS_RK[22][29]:ffffffffffffffff BS_RK[22][30]:ffffffffffffffff BS_RK[22][31]:ffffffffffffffff 
+         key round23:
+BS_RK[23][0]:ffffffffffffffff BS_RK[23][1]:0000000000000000 BS_RK[23][2]:ffffffffffffffff BS_RK[23][3]:0000000000000000 
+BS_RK[23][4]:0000000000000000 BS_RK[23][5]:0000000000000000 BS_RK[23][6]:ffffffffffffffff BS_RK[23][7]:0000000000000000 
+BS_RK[23][8]:ffffffffffffffff BS_RK[23][9]:ffffffffffffffff BS_RK[23][10]:0000000000000000 BS_RK[23][11]:ffffffffffffffff 
+BS_RK[23][12]:ffffffffffffffff BS_RK[23][13]:0000000000000000 BS_RK[23][14]:ffffffffffffffff BS_RK[23][15]:ffffffffffffffff 
+BS_RK[23][16]:0000000000000000 BS_RK[23][17]:0000000000000000 BS_RK[23][18]:ffffffffffffffff BS_RK[23][19]:ffffffffffffffff 
+BS_RK[23][20]:0000000000000000 BS_RK[23][21]:ffffffffffffffff BS_RK[23][22]:ffffffffffffffff BS_RK[23][23]:0000000000000000 
+BS_RK[23][24]:0000000000000000 BS_RK[23][25]:0000000000000000 BS_RK[23][26]:ffffffffffffffff BS_RK[23][27]:0000000000000000 
+BS_RK[23][28]:0000000000000000 BS_RK[23][29]:0000000000000000 BS_RK[23][30]:0000000000000000 BS_RK[23][31]:0000000000000000 
+         key round24:
+BS_RK[24][0]:ffffffffffffffff BS_RK[24][1]:ffffffffffffffff BS_RK[24][2]:ffffffffffffffff BS_RK[24][3]:ffffffffffffffff 
+BS_RK[24][4]:ffffffffffffffff BS_RK[24][5]:0000000000000000 BS_RK[24][6]:0000000000000000 BS_RK[24][7]:ffffffffffffffff 
+BS_RK[24][8]:0000000000000000 BS_RK[24][9]:0000000000000000 BS_RK[24][10]:0000000000000000 BS_RK[24][11]:ffffffffffffffff 
+BS_RK[24][12]:0000000000000000 BS_RK[24][13]:0000000000000000 BS_RK[24][14]:0000000000000000 BS_RK[24][15]:0000000000000000 
+BS_RK[24][16]:0000000000000000 BS_RK[24][17]:ffffffffffffffff BS_RK[24][18]:ffffffffffffffff BS_RK[24][19]:ffffffffffffffff 
+BS_RK[24][20]:0000000000000000 BS_RK[24][21]:0000000000000000 BS_RK[24][22]:ffffffffffffffff BS_RK[24][23]:0000000000000000 
+BS_RK[24][24]:0000000000000000 BS_RK[24][25]:0000000000000000 BS_RK[24][26]:0000000000000000 BS_RK[24][27]:ffffffffffffffff 
+BS_RK[24][28]:ffffffffffffffff BS_RK[24][29]:ffffffffffffffff BS_RK[24][30]:ffffffffffffffff BS_RK[24][31]:ffffffffffffffff 
+         key round25:
+BS_RK[25][0]:ffffffffffffffff BS_RK[25][1]:0000000000000000 BS_RK[25][2]:0000000000000000 BS_RK[25][3]:ffffffffffffffff 
+BS_RK[25][4]:0000000000000000 BS_RK[25][5]:ffffffffffffffff BS_RK[25][6]:0000000000000000 BS_RK[25][7]:ffffffffffffffff 
+BS_RK[25][8]:ffffffffffffffff BS_RK[25][9]:0000000000000000 BS_RK[25][10]:ffffffffffffffff BS_RK[25][11]:ffffffffffffffff 
+BS_RK[25][12]:0000000000000000 BS_RK[25][13]:0000000000000000 BS_RK[25][14]:ffffffffffffffff BS_RK[25][15]:ffffffffffffffff 
+BS_RK[25][16]:ffffffffffffffff BS_RK[25][17]:ffffffffffffffff BS_RK[25][18]:ffffffffffffffff BS_RK[25][19]:ffffffffffffffff 
+BS_RK[25][20]:ffffffffffffffff BS_RK[25][21]:ffffffffffffffff BS_RK[25][22]:0000000000000000 BS_RK[25][23]:ffffffffffffffff 
+BS_RK[25][24]:0000000000000000 BS_RK[25][25]:0000000000000000 BS_RK[25][26]:ffffffffffffffff BS_RK[25][27]:0000000000000000 
+BS_RK[25][28]:ffffffffffffffff BS_RK[25][29]:0000000000000000 BS_RK[25][30]:ffffffffffffffff BS_RK[25][31]:ffffffffffffffff 
+         key round26:
+BS_RK[26][0]:ffffffffffffffff BS_RK[26][1]:ffffffffffffffff BS_RK[26][2]:ffffffffffffffff BS_RK[26][3]:0000000000000000 
+BS_RK[26][4]:ffffffffffffffff BS_RK[26][5]:ffffffffffffffff BS_RK[26][6]:0000000000000000 BS_RK[26][7]:ffffffffffffffff 
+BS_RK[26][8]:ffffffffffffffff BS_RK[26][9]:0000000000000000 BS_RK[26][10]:ffffffffffffffff BS_RK[26][11]:ffffffffffffffff 
+BS_RK[26][12]:ffffffffffffffff BS_RK[26][13]:0000000000000000 BS_RK[26][14]:ffffffffffffffff BS_RK[26][15]:0000000000000000 
+BS_RK[26][16]:ffffffffffffffff BS_RK[26][17]:ffffffffffffffff BS_RK[26][18]:ffffffffffffffff BS_RK[26][19]:ffffffffffffffff 
+BS_RK[26][20]:0000000000000000 BS_RK[26][21]:ffffffffffffffff BS_RK[26][22]:ffffffffffffffff BS_RK[26][23]:ffffffffffffffff 
+BS_RK[26][24]:ffffffffffffffff BS_RK[26][25]:ffffffffffffffff BS_RK[26][26]:0000000000000000 BS_RK[26][27]:0000000000000000 
+BS_RK[26][28]:0000000000000000 BS_RK[26][29]:0000000000000000 BS_RK[26][30]:ffffffffffffffff BS_RK[26][31]:ffffffffffffffff 
+         key round27:
+BS_RK[27][0]:ffffffffffffffff BS_RK[27][1]:0000000000000000 BS_RK[27][2]:ffffffffffffffff BS_RK[27][3]:ffffffffffffffff 
+BS_RK[27][4]:0000000000000000 BS_RK[27][5]:ffffffffffffffff BS_RK[27][6]:0000000000000000 BS_RK[27][7]:0000000000000000 
+BS_RK[27][8]:0000000000000000 BS_RK[27][9]:ffffffffffffffff BS_RK[27][10]:ffffffffffffffff BS_RK[27][11]:0000000000000000 
+BS_RK[27][12]:0000000000000000 BS_RK[27][13]:0000000000000000 BS_RK[27][14]:ffffffffffffffff BS_RK[27][15]:ffffffffffffffff 
+BS_RK[27][16]:ffffffffffffffff BS_RK[27][17]:0000000000000000 BS_RK[27][18]:ffffffffffffffff BS_RK[27][19]:ffffffffffffffff 
+BS_RK[27][20]:ffffffffffffffff BS_RK[27][21]:ffffffffffffffff BS_RK[27][22]:0000000000000000 BS_RK[27][23]:0000000000000000 
+BS_RK[27][24]:ffffffffffffffff BS_RK[27][25]:0000000000000000 BS_RK[27][26]:ffffffffffffffff BS_RK[27][27]:0000000000000000 
+BS_RK[27][28]:ffffffffffffffff BS_RK[27][29]:ffffffffffffffff BS_RK[27][30]:0000000000000000 BS_RK[27][31]:ffffffffffffffff 
+         key round28:
+BS_RK[28][0]:0000000000000000 BS_RK[28][1]:ffffffffffffffff BS_RK[28][2]:0000000000000000 BS_RK[28][3]:ffffffffffffffff 
+BS_RK[28][4]:ffffffffffffffff BS_RK[28][5]:ffffffffffffffff BS_RK[28][6]:0000000000000000 BS_RK[28][7]:0000000000000000 
+BS_RK[28][8]:0000000000000000 BS_RK[28][9]:0000000000000000 BS_RK[28][10]:ffffffffffffffff BS_RK[28][11]:ffffffffffffffff 
+BS_RK[28][12]:0000000000000000 BS_RK[28][13]:0000000000000000 BS_RK[28][14]:0000000000000000 BS_RK[28][15]:ffffffffffffffff 
+BS_RK[28][16]:ffffffffffffffff BS_RK[28][17]:ffffffffffffffff BS_RK[28][18]:ffffffffffffffff BS_RK[28][19]:0000000000000000 
+BS_RK[28][20]:ffffffffffffffff BS_RK[28][21]:ffffffffffffffff BS_RK[28][22]:0000000000000000 BS_RK[28][23]:0000000000000000 
+BS_RK[28][24]:ffffffffffffffff BS_RK[28][25]:0000000000000000 BS_RK[28][26]:ffffffffffffffff BS_RK[28][27]:ffffffffffffffff 
+BS_RK[28][28]:ffffffffffffffff BS_RK[28][29]:0000000000000000 BS_RK[28][30]:0000000000000000 BS_RK[28][31]:0000000000000000 
+         key round29:
+BS_RK[29][0]:0000000000000000 BS_RK[29][1]:0000000000000000 BS_RK[29][2]:0000000000000000 BS_RK[29][3]:ffffffffffffffff 
+BS_RK[29][4]:0000000000000000 BS_RK[29][5]:ffffffffffffffff BS_RK[29][6]:ffffffffffffffff BS_RK[29][7]:0000000000000000 
+BS_RK[29][8]:0000000000000000 BS_RK[29][9]:0000000000000000 BS_RK[29][10]:0000000000000000 BS_RK[29][11]:ffffffffffffffff 
+BS_RK[29][12]:0000000000000000 BS_RK[29][13]:0000000000000000 BS_RK[29][14]:0000000000000000 BS_RK[29][15]:0000000000000000 
+BS_RK[29][16]:0000000000000000 BS_RK[29][17]:0000000000000000 BS_RK[29][18]:ffffffffffffffff BS_RK[29][19]:0000000000000000 
+BS_RK[29][20]:ffffffffffffffff BS_RK[29][21]:ffffffffffffffff BS_RK[29][22]:ffffffffffffffff BS_RK[29][23]:ffffffffffffffff 
+BS_RK[29][24]:ffffffffffffffff BS_RK[29][25]:ffffffffffffffff BS_RK[29][26]:0000000000000000 BS_RK[29][27]:0000000000000000 
+BS_RK[29][28]:0000000000000000 BS_RK[29][29]:ffffffffffffffff BS_RK[29][30]:0000000000000000 BS_RK[29][31]:ffffffffffffffff 
+         key round30:
+BS_RK[30][0]:ffffffffffffffff BS_RK[30][1]:0000000000000000 BS_RK[30][2]:0000000000000000 BS_RK[30][3]:ffffffffffffffff 
+BS_RK[30][4]:0000000000000000 BS_RK[30][5]:ffffffffffffffff BS_RK[30][6]:ffffffffffffffff BS_RK[30][7]:ffffffffffffffff 
+BS_RK[30][8]:ffffffffffffffff BS_RK[30][9]:0000000000000000 BS_RK[30][10]:ffffffffffffffff BS_RK[30][11]:0000000000000000 
+BS_RK[30][12]:0000000000000000 BS_RK[30][13]:0000000000000000 BS_RK[30][14]:0000000000000000 BS_RK[30][15]:0000000000000000 
+BS_RK[30][16]:0000000000000000 BS_RK[30][17]:0000000000000000 BS_RK[30][18]:0000000000000000 BS_RK[30][19]:0000000000000000 
+BS_RK[30][20]:0000000000000000 BS_RK[30][21]:0000000000000000 BS_RK[30][22]:0000000000000000 BS_RK[30][23]:0000000000000000 
+BS_RK[30][24]:0000000000000000 BS_RK[30][25]:ffffffffffffffff BS_RK[30][26]:0000000000000000 BS_RK[30][27]:0000000000000000 
+BS_RK[30][28]:ffffffffffffffff BS_RK[30][29]:ffffffffffffffff BS_RK[30][30]:ffffffffffffffff BS_RK[30][31]:0000000000000000 
+         key round31:
+BS_RK[31][0]:0000000000000000 BS_RK[31][1]:0000000000000000 BS_RK[31][2]:ffffffffffffffff BS_RK[31][3]:ffffffffffffffff 
+BS_RK[31][4]:0000000000000000 BS_RK[31][5]:ffffffffffffffff BS_RK[31][6]:ffffffffffffffff BS_RK[31][7]:ffffffffffffffff 
+BS_RK[31][8]:0000000000000000 BS_RK[31][9]:ffffffffffffffff BS_RK[31][10]:0000000000000000 BS_RK[31][11]:0000000000000000 
+BS_RK[31][12]:ffffffffffffffff BS_RK[31][13]:ffffffffffffffff BS_RK[31][14]:0000000000000000 BS_RK[31][15]:ffffffffffffffff 
+BS_RK[31][16]:0000000000000000 BS_RK[31][17]:0000000000000000 BS_RK[31][18]:0000000000000000 BS_RK[31][19]:ffffffffffffffff 
+BS_RK[31][20]:0000000000000000 BS_RK[31][21]:0000000000000000 BS_RK[31][22]:0000000000000000 BS_RK[31][23]:ffffffffffffffff 
+BS_RK[31][24]:ffffffffffffffff BS_RK[31][25]:ffffffffffffffff BS_RK[31][26]:ffffffffffffffff BS_RK[31][27]:ffffffffffffffff 
+BS_RK[31][28]:ffffffffffffffff BS_RK[31][29]:ffffffffffffffff BS_RK[31][30]:0000000000000000 BS_RK[31][31]:0000000000000000 
