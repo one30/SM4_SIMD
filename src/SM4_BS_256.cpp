@@ -289,6 +289,102 @@ void BS_TRANS_inv()//trans BS_N[128][4]*64bit to BS_M_inv[256][4]*32bit
     // }
 }
 
+void BS_TRANS_VER_128x256(__m256i* N,__m128i* M){
+    // M[1] = {0xfffffff,0xfffffff,0xfffffff,0xfffffff};
+    //uint64_t mask[6];
+    __m256i mask[7];
+    __m256i mk[7];
+    uint64_t m0[4] = {0x5555555555555555,0x5555555555555555,0x5555555555555555,0x5555555555555555};
+    uint64_t m1[4] = {0x3333333333333333,0x3333333333333333,0x3333333333333333,0x3333333333333333};
+    uint64_t m2[4] = {0x0f0f0f0f0f0f0f0f,0x0f0f0f0f0f0f0f0f,0x0f0f0f0f0f0f0f0f,0x0f0f0f0f0f0f0f0f};
+    uint64_t m3[4] = {0x00ff00ff00ff00ff,0x00ff00ff00ff00ff,0x00ff00ff00ff00ff,0x00ff00ff00ff00ff};
+    uint64_t m4[4] = {0x0000ffff0000ffff,0x0000ffff0000ffff,0x0000ffff0000ffff,0x0000ffff0000ffff};
+    uint64_t m5[4] = {0x00000000ffffffff,0x00000000ffffffff,0x00000000ffffffff,0x00000000ffffffff};
+    uint64_t m6[4] = {0x0000000000000000,0xffffffffffffffff,0x0000000000000000,0xffffffffffffffff};
+    mask[0] = _mm256_load_si256((__m256i*)m0);
+    mask[1] = _mm256_load_si256((__m256i*)m1);
+    mask[2] = _mm256_load_si256((__m256i*)m2);
+    mask[3] = _mm256_load_si256((__m256i*)m3);
+    mask[4] = _mm256_load_si256((__m256i*)m4);
+    mask[5] = _mm256_load_si256((__m256i*)m5);
+    mask[6] = _mm256_load_si256((__m256i*)m6);
+    __m256i M_temp[128];
+    uint64_t k,k2,kt,l;
+    uint64_t t1[4],t2[4];
+    uint64_t zero = 0;
+    //_mm_setzero_si64();
+    __m256i temp,m,n,a,b,o,p;
+    //temp = (test[0] & mask[6]) ^ ((test[0]&~mask[6])<<1);
+    //temp = (test[0]&~mask[0])<<2；
+
+
+    for(int j=0; j<7; j++)
+    {
+        k = 1<<j;
+        k2 = k*2;
+        kt = 0;
+        //r = k-1;
+        if(j==6)//when shift bit = 64,128 bit SIMD with shift operation has bug
+        {
+            for(int i=0; i<64; i++)
+            {
+                l = kt%127;
+                m = N[l];
+                n = N[l+k];
+
+                _mm256_store_si256((__m256i*)t1,n);
+                o = _mm256_setr_epi64x(zero,t1[0],zero,t1[2]);
+
+                _mm256_store_si256((__m256i*)t2,m);
+                p = _mm256_setr_epi64x(t2[1],zero,t2[3],zero);
+
+                temp = (m&~mask[j]) ^ o;
+                N[l+k] = (n&(mask[j])) ^ p;
+                N[l] = temp;
+                M_temp[l] = temp;
+                M_temp[l+k] = N[l+k];
+
+                kt+=k2;
+            }
+
+            
+        }
+        else
+        {
+            for(int i=0; i<64; i++)
+            {
+                // l = (k2*i)%63;
+                l = kt%127;
+                m = N[l];
+                n = N[l+k];
+                // a = (m&~mask[j]);
+                // b = ((n>>k)&mask[j]);
+                //temp = (m&~mask[j]) ^ ((n&~mask[j])>>k);
+                temp = (m&~mask[j]) ^ ((n>>k)&mask[j]);
+                N[l+k] = (n&(mask[j])) ^ ((m<<k)&~mask[j]);
+                //N[l+k] = (n&(mask[j])) ^ ((m&(mask[j]))<<k);
+                N[l] = temp;
+
+                M_temp[l] = temp;
+                M_temp[l+k] = N[l+k];
+
+                kt+=k2;           
+            }
+        }      
+    }
+
+    __m128i test[256];
+    __m128i t[2];
+    for(int i = 0; i < 128; i++)
+    {
+        _mm256_store_si256((__m256i*)t,N[i]);
+        M[i] = t[0];
+        M[128+i] = t[1]; 
+        test[i] = t[0];
+        test[128+i] = t[1];         
+    }
+}
+
 /*
  * private function:
  * look up in SboxTable and get the related value.
@@ -553,6 +649,7 @@ void SM4_BS_enc(__m128i* M,__m256i* N)
     //BS_TRANS();//bingo256
     BS_TRANS_128x256(M,N);
     BS_iteration(N);
+    BS_TRANS_VER_128x256(N,M);
     //BS_TRANS_128x256(M,N);
     //BS_TRANS_inv();//bingo256
 }

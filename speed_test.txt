@@ -53,10 +53,13 @@ SM4_encrypt_BS64bit>>> , time: 0.000011 s, speed: 734.913692 Mb/s
 AVX2+选择函数
 SM4_encrypt>>> blocks: 256, time: 0.000022 s, speed: 180.677613 MB/s 1445.36Mbps
 
+SM4_encrypt_BS256bit>>> , time: 0.000099 s, speed: 316.612800 Mb/s
+SM4_encrypt_BS256bit>>> , time: 0.000056 s, speed: 562.926135 Mb/s
 trans fun 
+SM4_encrypt_BS256bit>>> , time: 0.000019 s, speed: 1649.633649 Mb/s
+
+
 SM4_encrypt_BS256bit>>> , time: 0.000011 s, speed: 2936.781663 Mb/s
-
-
 
 
 

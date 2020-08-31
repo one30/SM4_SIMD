@@ -24,6 +24,7 @@ void SM4_BS_enc(__m128i* M,__m256i* N);
 void BS_TRANS();
 void BS_TRANS_128x256(__m128i* M,__m256i* N);
 void BS_TRANS_inv();
+void BS_TRANS_VER_128x256(__m256i* N,__m128i* M);
 static unsigned long sm4CalciRK(unsigned long ka);
 static unsigned char sm4Sbox(unsigned char inch);
 void Sm4_BoolFun(bits in, bit_t *out0, bit_t *out1, bit_t *out2, bit_t *out3, bit_t *out4, bit_t *out5, bit_t *out6, bit_t *out7);
