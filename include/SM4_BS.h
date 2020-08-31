@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>	
-//#define BS_64bit //注销此行则执行256位bitslice
+//#define BS_64bit //delete this line to exec 256bit bitslice
 #ifdef BS_64bit
 typedef uint64_t bit_t;
 typedef struct {
@@ -14,14 +14,17 @@ typedef struct {
   bit_t b7;
 } bits;
 void hi();
-void BS_init_M();
-void SM4_BS_enc();
+void BS_init_M(uint64_t* M);
+void SM4_BS_enc(uint64_t* M,uint64_t* N);
 void BS_TRANS();
+void BS_TRANS_64x64(uint64_t* M);
+//void BS_TRANS_64x128(uint64_t* M,uint64_t* N);
+void BS_TRANS_VER_64x128(uint64_t* N,uint64_t* M);
 void BS_TRANS_inv();
 static unsigned long sm4CalciRK(unsigned long ka);
 static unsigned char sm4Sbox(unsigned char inch);
 void Sm4_BoolFun(bits in, bit_t *out0, bit_t *out1, bit_t *out2, bit_t *out3, bit_t *out4, bit_t *out5, bit_t *out6, bit_t *out7);
-void BS_iteration();
+void BS_iteration(uint64_t* N);
 void S_box(int round);
 void benchmark_sm4_bs_encrypt();
 /*

@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/mnt/hgfs/code/SM4_SIMD/build",
+  "command": "/usr/bin/c++   -I/mnt/hgfs/code/SM4_SIMD/./include   -std=c++11 -fpermissive -mavx2 -Wa,-q -std=c++11  -O3 -g   -o CMakeFiles/demo.dir/test/AVX_SM4_TEST.cpp.o -c /mnt/hgfs/code/SM4_SIMD/test/AVX_SM4_TEST.cpp",
+  "file": "/mnt/hgfs/code/SM4_SIMD/test/AVX_SM4_TEST.cpp"
+},
+{
+  "directory": "/mnt/hgfs/code/SM4_SIMD/build",
+  "command": "/usr/bin/c++   -I/mnt/hgfs/code/SM4_SIMD/./include   -std=c++11 -fpermissive -mavx2 -Wa,-q -std=c++11  -O3 -g   -o CMakeFiles/demo.dir/src/AVX_SM4.cpp.o -c /mnt/hgfs/code/SM4_SIMD/src/AVX_SM4.cpp",
+  "file": "/mnt/hgfs/code/SM4_SIMD/src/AVX_SM4.cpp"
+},
+{
+  "directory": "/mnt/hgfs/code/SM4_SIMD/build",
+  "command": "/usr/bin/c++   -I/mnt/hgfs/code/SM4_SIMD/./include   -std=c++11 -fpermissive -mavx2 -Wa,-q -std=c++11  -O3 -g   -o CMakeFiles/demo.dir/src/AVX_SM4_BS.cpp.o -c /mnt/hgfs/code/SM4_SIMD/src/AVX_SM4_BS.cpp",
+  "file": "/mnt/hgfs/code/SM4_SIMD/src/AVX_SM4_BS.cpp"
+},
+{
+  "directory": "/mnt/hgfs/code/SM4_SIMD/build",
+  "command": "/usr/bin/c++   -I/mnt/hgfs/code/SM4_SIMD/./include   -std=c++11 -fpermissive -mavx2 -Wa,-q -std=c++11  -O3 -g   -o CMakeFiles/demo.dir/src/SM4_BS.cpp.o -c /mnt/hgfs/code/SM4_SIMD/src/SM4_BS.cpp",
+  "file": "/mnt/hgfs/code/SM4_SIMD/src/SM4_BS.cpp"
+},
+{
+  "directory": "/mnt/hgfs/code/SM4_SIMD/build",
+  "command": "/usr/bin/c++   -I/mnt/hgfs/code/SM4_SIMD/./include   -std=c++11 -fpermissive -mavx2 -Wa,-q -std=c++11  -O3 -g   -o CMakeFiles/demo.dir/src/SM4_BS_256.cpp.o -c /mnt/hgfs/code/SM4_SIMD/src/SM4_BS_256.cpp",
+  "file": "/mnt/hgfs/code/SM4_SIMD/src/SM4_BS_256.cpp"
+},
+{
+  "directory": "/mnt/hgfs/code/SM4_SIMD/build",
+  "command": "/usr/bin/c++   -I/mnt/hgfs/code/SM4_SIMD/./include   -std=c++11 -fpermissive -mavx2 -Wa,-q -std=c++11  -O3 -g   -o CMakeFiles/demo.dir/src/bs.cpp.o -c /mnt/hgfs/code/SM4_SIMD/src/bs.cpp",
+  "file": "/mnt/hgfs/code/SM4_SIMD/src/bs.cpp"
+}
+]

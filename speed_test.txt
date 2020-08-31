@@ -14,17 +14,47 @@ SM4_decrypt>>> blocks: 262144, time: 0.019932 s, speed: 200.680105 MB/s
 SM4_encrypt>>> blocks: 1048576, time: 0.079857 s, speed: 200.359043 MB/s
 SM4_decrypt>>> blocks: 1048576, time: 0.081764 s, speed: 195.685980 MB/s
 
+Speed Test.
+SM4_encrypt>>> blocks: 16, time: 0.000001 s, speed: 185.748672 MB/s
+SM4_decrypt>>> blocks: 16, time: 0.000001 s, speed: 184.955019 MB/s
+SM4_encrypt>>> blocks: 64, time: 0.000005 s, speed: 196.669124 MB/s
+SM4_decrypt>>> blocks: 64, time: 0.000005 s, speed: 192.236713 MB/s
+SM4_encrypt>>> blocks: 256, time: 0.000020 s, speed: 199.593787 MB/s
+SM4_decrypt>>> blocks: 256, time: 0.000019 s, speed: 205.375920 MB/s
+SM4_encrypt>>> blocks: 1024, time: 0.000078 s, speed: 200.788763 MB/s
+SM4_decrypt>>> blocks: 1024, time: 0.000081 s, speed: 191.835482 MB/s
+SM4_encrypt>>> blocks: 4096, time: 0.000313 s, speed: 199.963354 MB/s
+SM4_decrypt>>> blocks: 4096, time: 0.000315 s, speed: 198.563985 MB/s
+
 Speed Test.(SM4_BS.cpp)
 anf boolfunction:
 SM4_encrypt_BS64bit>>> , time: 0.000029 s, speed: 205 Mb/s
 kwan boolfunction
 SM4_encrypt_BS64bit>>> , time: 0.000029 s, speed: 267.148817 Mb/s
 
+原方案：258.70
+AES转置方案：215.97
+nlogn方案：373.3
+
 anf boolfunction:
 SM4_encrypt_BS256bit>>> , time: 0.000090 s, speed: 232 Mb/s
 kwan boolfunction
 SM4_encrypt_BS256bit>>> , time: 0.000090 s, speed: 347.856093 Mb/s
 
+256bit avx anf boolfunction:1000times
+all:time: 0.106914 s,
+BS_TRANS(): time: 0.046764 s,
+BS_iteration():time: 0.007864 s
+BS_TRANS_inv():time: 0.047473 s
+
+20200824:
+普通指令集+选择函数
+SM4_encrypt_BS64bit>>> , time: 0.000011 s, speed: 734.913692 Mb/s
+AVX2+选择函数
+SM4_encrypt>>> blocks: 256, time: 0.000022 s, speed: 180.677613 MB/s 1445.36Mbps
+
+trans fun 
+SM4_encrypt_BS256bit>>> , time: 0.000011 s, speed: 2936.781663 Mb/s
 
 
 

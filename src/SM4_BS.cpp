@@ -1,7 +1,9 @@
 #include "SM4_BS.h"
+#include "bs.h"
 #ifdef BS_64bit
 #include <time.h>
 uint32_t BS_M[64][4];
+bit_t BS_N_bit[128][64];
 uint64_t BS_N[128];
 uint32_t BS_M_inv[64][4];
 uint64_t BS_RK[32][32];
@@ -36,14 +38,16 @@ void hi()
     printf("hello world\n");
 }
 
-void BS_init_M()
+void BS_init_M(uint64_t* M)
 {
     for(int i = 0; i < 64; i++)
     {
-        BS_M[i][0] = 0x01234567; 
-        BS_M[i][1] = 0x89abcdef;
-        BS_M[i][2] = 0xfedcba98;
-        BS_M[i][3] = 0x76543210;
+        // BS_M[i][0] = 0x01234567; 
+        // BS_M[i][1] = 0x89abcdef;
+        // BS_M[i][2] = 0xfedcba98;
+        // BS_M[i][3] = 0x76543210;
+        M[2*i] = 0x0123456789abcdef;
+        M[2*i+1] = 0xfedcba9876543210;
         // for(int j = 0; j < 4; j++)
         // {
         //     printf("BS_M[%d]%08x",i,BS_M[i][j]);
@@ -84,13 +88,158 @@ void BS_TRANS()
         shift = shift << 1;
     }
 
-    // printf("\ttest BS_N[128]\n");
+    // printf("\ttest BS_TRANS()\n");
     // for(int i = 0; i < 128; i++)
     // {
     //     printf("BS_N[%d]=%016llx",i,BS_N[i]);
     //     if((i+1)%4==0) printf("\n");
     // }
     // printf("\ttest BS_N end\n");
+}
+
+inline void BS_TRANS_64x128(uint64_t *M,uint64_t *N){
+    // M[1] = {0xfffffff,0xfffffff,0xfffffff,0xfffffff};
+    uint64_t mask[6];
+    uint64_t M_temp[128];
+    //memset(N,0,128);
+    for(int i = 0; i < 64; i++)
+    {
+        N[i] = M[2*i];
+        N[i+64] = M[2*i+1];
+    }
+    mask[0] = 0x5555555555555555;
+    mask[1] = 0x3333333333333333;
+    mask[2] = 0x0f0f0f0f0f0f0f0f;
+    mask[3] = 0x00ff00ff00ff00ff;
+    mask[4] = 0x0000ffff0000ffff;
+    mask[5] = 0x00000000ffffffff;
+    uint64_t k,k2,kt,l,temp,m,n,o,p;
+    for(int j=0; j<6; j++)
+    {
+        k = 1<<j;
+        k2 = k*2;
+        kt = 0;
+        //r = k-1;
+        for(int i=0; i<32; i++)
+        {
+            // l = (k2*i)%63;
+            l = kt%63;
+            m = N[l];
+            n = N[l+k];
+            o = N[l+64];
+            p = N[l+k+64];
+            temp = (m&~mask[j]) ^ ((n&~mask[j])>>k);
+            N[l+k] = (n&(mask[j])) ^ ((m&(mask[j]))<<k);
+            N[l] = temp;
+            // M_temp[l] = temp;
+            // M_temp[l+k] = M[l+k];
+
+            temp = (o&~mask[j]) ^ ((p&~mask[j])>>k);
+            N[l+k+64] = (p&(mask[j])) ^ ((o&(mask[j]))<<k);
+            N[l+64] = temp;
+            // M_temp[l+64] = temp;
+            // M_temp[l+k+64] = M[l+k+64];
+            kt+=k2;           
+        }
+    }
+    // printf("\ttest BS_TRANS_64x128()\n");
+    // for(int i = 0; i < 128; i++)
+    // {
+    //     printf("N[%d]=%016llx",i,N[i]);
+    //     if((i+1)%4==0) printf("\n");
+    // }
+    // printf("\ttest BS_TRANS_64x128 end\n");
+}
+
+void BS_TRANS_VER_64x128(uint64_t* N,uint64_t* M){
+    // M[1] = {0xfffffff,0xfffffff,0xfffffff,0xfffffff};
+    uint64_t mask[6];
+    uint64_t M_temp[128];
+    //memset(N,0,128);
+    mask[0] = 0x5555555555555555;
+    mask[1] = 0x3333333333333333;
+    mask[2] = 0x0f0f0f0f0f0f0f0f;
+    mask[3] = 0x00ff00ff00ff00ff;
+    mask[4] = 0x0000ffff0000ffff;
+    mask[5] = 0x00000000ffffffff;
+    uint64_t k,k2,kt,l,temp,m,n,o,p;
+    for(int j=0; j<6; j++)
+    {
+        k = 1<<j;
+        k2 = k*2;
+        kt = 0;
+        //r = k-1;
+        for(int i=0; i<32; i++)
+        {
+            // l = (k2*i)%63;
+            l = kt%63;
+            m = N[l];
+            n = N[l+k];
+            o = N[l+64];
+            p = N[l+k+64];
+            temp = (m&~mask[j]) ^ ((n&~mask[j])>>k);
+            N[l+k] = (n&(mask[j])) ^ ((m&(mask[j]))<<k);
+            N[l] = temp;
+            // M_temp[l] = temp;
+            // M_temp[l+k] = M[l+k];
+
+            temp = (o&~mask[j]) ^ ((p&~mask[j])>>k);
+            N[l+k+64] = (p&(mask[j])) ^ ((o&(mask[j]))<<k);
+            N[l+64] = temp;
+            // M_temp[l+64] = temp;
+            // M_temp[l+k+64] = M[l+k+64];
+
+            kt+=k2;           
+        }
+    }
+    for(int i = 0; i < 64; i++)
+    {
+        M[2*i] = N[i];
+        M[2*i+1] = N[i+64];
+    }
+
+    // for(int i = 0; i < 128; i++)
+    // {
+        
+    //     printf("M[%d]%16llx",i,M[i]);
+    //     if((i+1)%4==0) printf("\n");
+    // }
+
+}
+
+void  BS_TRANS_64x64(uint64_t* M)
+{
+    // M[1] = {0xfffffff,0xfffffff,0xfffffff,0xfffffff};
+    uint64_t mask[6];
+    uint64_t M_temp[64];
+    mask[0] = 0x5555555555555555;
+    mask[1] = 0x3333333333333333;
+    mask[2] = 0x0f0f0f0f0f0f0f0f;
+    mask[3] = 0x00ff00ff00ff00ff;
+    mask[4] = 0x0000ffff0000ffff;
+    mask[5] = 0x00000000ffffffff;
+    uint64_t k,k2,kt,l,temp,m,n,flag1,flag2;
+    for(int j=0; j<6; j++)
+    {
+        k = 1<<j;
+        k2 = k*2;
+        kt = 0;
+        //r = k-1;
+        for(int i=0; i<32; i++)
+        {
+            // l = (k2*i)%63;
+            l = kt%63;
+            m = M[l];
+            n = M[l+k];
+            temp = (m&~mask[j]) ^ ((n&~mask[j])>>k);
+            M[l+k] = (n&(mask[j])) ^ ((m&(mask[j]))<<k);
+            M[l] = temp;
+            kt+=k2;
+
+        }
+    }
+
+
 }
 
 void BS_TRANS_inv()//trans BS_N to BS_M
@@ -230,7 +379,7 @@ void SM4_key_schedule(uint8_t key[16], uint32_t rkey[32])
         
 }
 
-void BS_iteration()
+void BS_iteration(uint64_t* N)
 {
     int i = 0;
     uint64_t t1 , t2;
@@ -240,7 +389,7 @@ void BS_iteration()
     {
         for(int k = 0; k < 32; k++)
         {
-            buf[j][k] = BS_N[32*j+k];//load data
+            buf[j][k] = N[32*j+k];//load data
             // printf("buf[%d][%d]=%016llx",j,k,buf[j][k]);
             // if((k+1)%4==0) printf("\n");
         }
@@ -281,7 +430,7 @@ void BS_iteration()
     {
         for(int k = 0; k < 32; k++)
         {
-            BS_N[32*j+k] = buf[35-j][k];
+            N[32*j+k] = buf[35-j][k];
         }
     }
 
@@ -328,23 +477,26 @@ void S_box(int round)
 }
 
 
-void SM4_BS_enc()
+void SM4_BS_enc(uint64_t* M,uint64_t* N)
 {
-    BS_TRANS();//bingo
-    BS_iteration();   
-    BS_TRANS_inv();//bingo
+    //BS_TRANS();//bingo
+    //BS_TRANS();
+    BS_TRANS_64x128(M,N);
+    BS_iteration(N);
+    BS_TRANS_VER_64x128(N,M);
 }
 
 void benchmark_sm4_bs_encrypt()
 {
     unsigned char key[16] = {0x01,0x23,0x45,0x67,0x89,0xab,0xcd,0xef,0xfe,0xdc,0xba,0x98,0x76,0x54,0x32,0x10};
     uint32_t rk[32];
+    uint64_t M[128],N[128];
     SM4_key_schedule(key,rk);//bingo
-    BS_init_M();//bingo
-	int turns = 1000;
+    BS_init_M(M);//bingo
+	int turns = 10000;
 	clock_t t = clock();
 	for (int i = 0; i<turns; i++)
-		SM4_BS_enc();
+		SM4_BS_enc(M,N);
 	double tt = (double)(clock() - t) / (CLOCKS_PER_SEC*turns);
 	double speed = (double)(128 * 64) / (1024 * 1024 * tt);
 	printf("SM4_encrypt_BS64bit>>> , time: %f s, speed: %f Mb/s\n", tt,speed);

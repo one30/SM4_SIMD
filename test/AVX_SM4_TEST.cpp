@@ -17,14 +17,14 @@ int main(int argc,char **argv)
 	
 	benchmark_sm4_bs_encrypt();
 
-	// // plain: 01 23 45 67 89 ab cd ef fe dc ba 98 76 54 32 10
-	// // key:   01 23 45 67 89 ab cd ef fe dc ba 98 76 54 32 10
-	// // cipher: 68 1e df 34 d2 06 96 5e 86 b3 e9 4f 53 6e 42 46
+	// plain: 01 23 45 67 89 ab cd ef fe dc ba 98 76 54 32 10
+	// key:   01 23 45 67 89 ab cd ef fe dc ba 98 76 54 32 10
+	// cipher: 68 1e df 34 d2 06 96 5e 86 b3 e9 4f 53 6e 42 46
 
-	// /*
-	// 	to achieve avx2 best performance, encrypt 8 blocks at the same time, the data can be devided into 16 blocks each, each block contains 128bit
-	// 	gmssl has not fully developed the application of the avx2-encryption process, some of the functions may not work properly.
-	// */
+	/*
+		to achieve avx2 best performance, encrypt 8 blocks at the same time, the data can be devided into 16 blocks each, each block contains 128bit
+		gmssl has not fully developed the application of the avx2-encryption process, some of the functions may not work properly.
+	*/
 	// u1 key[SM4_KEY_SIZE] = {0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef, 0xfe, 0xdc, 0xba, 0x98, 0x76, 0x54, 0x32, 0x10};
 	// u1 plain[16 * SM4_BLOCK_SIZE] = {
 	// 	0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef, 0xfe, 0xdc, 0xba, 0x98, 0x76, 0x54, 0x32, 0x10,
@@ -64,6 +64,8 @@ int main(int argc,char **argv)
 	// c = plainn;
 	// benchmark_sm4_encrypt(plainn, c, rk, 1 << 4);
 	// benchmark_sm4_decrypt(plainn, c, rk, 1 << 4);
+	// benchmark_sm4_encrypt(plainn, c, rk, 1 << 6);
+	// benchmark_sm4_decrypt(plainn, c, rk, 1 << 6);
 	// benchmark_sm4_encrypt(plainn, c, rk, 1 << 8);
 	// benchmark_sm4_decrypt(plainn, c, rk, 1 << 8);
 	// benchmark_sm4_encrypt(plainn, c, rk, 1 << 10);
