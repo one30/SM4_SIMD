@@ -59,7 +59,7 @@ trans fun
 SM4_encrypt_BS256bit>>> , time: 0.000019 s, speed: 1649.633649 Mb/s
 
 
-SM4_encrypt_BS256bit>>> , time: 0.000011 s, speed: 2936.781663 Mb/s
+SM4_encrypt_BS256bit>>> , time: 0.000012 s, speed: 2692.828030 Mb/s
 
 
 

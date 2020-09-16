@@ -1,6 +1,7 @@
 #include "SM4_BS_256.h"
 #ifdef BS_256bit
 #include <time.h>
+#include "util.h"
 uint32_t BS_M[256][4];
 
 uint64_t BS_N[128][4];
@@ -167,7 +168,7 @@ void BS_TRANS_128x256(__m128i* M,__m256i* N){
         N[i] = _mm256_set_m128i(M[i],M[128+i]);
         test[i] = _mm256_set_m128i(M[i],M[128+i]);     
     }
-    __m256i M_temp[128];
+    //__m256i M_temp[128];
     uint64_t k,k2,kt,l;
     uint64_t t1[4],t2[4];
     uint64_t zero = 0;
@@ -198,8 +199,8 @@ void BS_TRANS_128x256(__m128i* M,__m256i* N){
                 temp = (m&~mask[j]) ^ o;
                 N[l+k] = (n&(mask[j])) ^ p;
                 N[l] = temp;
-                M_temp[l] = temp;
-                M_temp[l+k] = N[l+k];
+                // M_temp[l] = temp;
+                // M_temp[l+k] = N[l+k];
 
                 kt+=k2;
             }            
@@ -220,8 +221,8 @@ void BS_TRANS_128x256(__m128i* M,__m256i* N){
                 //N[l+k] = (n&(mask[j])) ^ ((m&(mask[j]))<<k);
                 N[l] = temp;
 
-                M_temp[l] = temp;
-                M_temp[l+k] = N[l+k];
+                // M_temp[l] = temp;
+                // M_temp[l+k] = N[l+k];
 
                 kt+=k2;           
             }
@@ -324,7 +325,9 @@ void BS_TRANS_VER_128x256(__m256i* N,__m128i* M){
         k2 = k*2;
         kt = 0;
         //r = k-1;
-        if(j==6)//when shift bit = 64,128 bit SIMD with shift operation has bug
+        //when shift bit = 64,128 bit SIMD with shift operation has bug
+        //set j==7
+        if(j==6)
         {
             for(int i=0; i<64; i++)
             {
@@ -341,8 +344,8 @@ void BS_TRANS_VER_128x256(__m256i* N,__m128i* M){
                 temp = (m&~mask[j]) ^ o;
                 N[l+k] = (n&(mask[j])) ^ p;
                 N[l] = temp;
-                M_temp[l] = temp;
-                M_temp[l+k] = N[l+k];
+                // M_temp[l] = temp;
+                // M_temp[l+k] = N[l+k];
 
                 kt+=k2;
             }
@@ -365,8 +368,8 @@ void BS_TRANS_VER_128x256(__m256i* N,__m128i* M){
                 //N[l+k] = (n&(mask[j])) ^ ((m&(mask[j]))<<k);
                 N[l] = temp;
 
-                M_temp[l] = temp;
-                M_temp[l+k] = N[l+k];
+                // M_temp[l] = temp;
+                // M_temp[l+k] = N[l+k];
 
                 kt+=k2;           
             }
@@ -529,6 +532,7 @@ void BS_iteration(__m256i* N)
 {
     int i = 0;
     uint64_t t1 , t2;
+    __m256i N_temp[128];
 
     //printf("test init_buf[][] 4 round:\n");
     for(int j = 0; j < 4; j++)//bingo 256bit
@@ -594,10 +598,10 @@ void BS_iteration(__m256i* N)
         }
     }
 
-    // for(int i = 0; i < 128; i++)//store data
-    // {
-    //     _mm256_store_si256((__m256i*)BS_N_test[i],BS_N_256[i]);
-    // }
+    for(int i = 0; i < 128; i++)//store data
+    {
+        N_temp[i] = N[i];
+    }
 
     // printf("\ttest BS_N_test[128]\n");
     // for(int i = 0; i < 128; i++)
@@ -666,10 +670,29 @@ void benchmark_sm4_bs_encrypt()
 	int turns = 10000;
 	clock_t t = clock();
 	for (int i = 0; i<turns; i++)
-		SM4_BS_enc(M,N);
+    {
+        SM4_BS_enc(M,N);
+        //SM4_BS_enc(M,N);
+    }
 	double tt = (double)(clock() - t) / (CLOCKS_PER_SEC*turns);//*1000 test time
 	double speed = (double)(128 * 256) / (1024 * 1024 * tt);
 	printf("SM4_encrypt_BS256bit>>> , time: %f s, speed: %f Mb/s\n", tt,speed);
+    
+    uint64_t begin;
+    uint64_t end;
+    uint64_t ans = 0;
+
+    begin = start_rdtsc();
+    
+    for (int i = 0; i<turns; i++)
+    {
+        SM4_BS_enc(M,N);
+        //SM4_BS_enc(M,N);
+    }
+
+    end = end_rdtsc();
+    
+    printf("FAST SM4 cycles:%llu CPU cycles\n", (end - begin)/turns/256);
 
 }
 

@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "AVX_SM4_BS.h"
 #include "SM4_BS.h"
+#include "util.h"
 #ifndef  BS_64bit
 #include "SM4_BS_256.h"
 #endif

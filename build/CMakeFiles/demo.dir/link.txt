@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++11 -fpermissive -mavx2 -Wa,-q -std=c++11  -O3 -g  -rdynamic CMakeFiles/demo.dir/test/AVX_SM4_TEST.cpp.o CMakeFiles/demo.dir/src/AVX_SM4.cpp.o CMakeFiles/demo.dir/src/AVX_SM4_BS.cpp.o CMakeFiles/demo.dir/src/SM4_BS.cpp.o CMakeFiles/demo.dir/src/SM4_BS_256.cpp.o CMakeFiles/demo.dir/src/bs.cpp.o  -o ../bin/demo 

@@ -17,6 +17,8 @@ typedef struct {
   bit_t b6;
   bit_t b7;
 } bits;
+
+
 void hi();
 void BS_init_M(__m128i* M);
 void SM4_BS_enc(__m128i* M,__m256i* N);
